@@ -1,0 +1,48 @@
+﻿@model CaloriesCouter.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KcalAmmoutPer100g)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KcalAmmoutPer100g)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProteinAmmoutPer100g)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProteinAmmoutPer100g)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FatAmmoutPer100g)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FatAmmoutPer100g)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CarbsAmmoutPer100g)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CarbsAmmoutPer100g)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
