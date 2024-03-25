@@ -15,5 +15,10 @@ namespace CaloriesCouter.Data
         }
 
         public DbSet<CaloriesCouter.Models.Product> Product { get; set; } = default!;
+        public DbSet<CaloriesCouter.Models.DailyMeals> Meals { get; set; } = default!;
+
+        public DbSet<CaloriesCouter.Models.User> Users { get; set; } = default!;
+
+
     }
 }

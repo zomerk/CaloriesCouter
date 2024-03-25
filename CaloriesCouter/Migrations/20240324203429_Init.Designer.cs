@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CaloriesCouter.Migrations
 {
     [DbContext(typeof(CaloriesCouterContext))]
-    [Migration("20240324170238_Initial")]
-    partial class Initial
+    [Migration("20240324203429_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace CaloriesCouter.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DailyMeals");
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("CaloriesCouter.Models.Product", b =>
@@ -106,7 +106,7 @@ namespace CaloriesCouter.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CaloriesCouter.Models.DailyMeals", b =>

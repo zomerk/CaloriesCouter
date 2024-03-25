@@ -44,7 +44,7 @@ namespace CaloriesCouter.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DailyMeals");
+                    b.ToTable("Meals");
                 });
 
             modelBuilder.Entity("CaloriesCouter.Models.Product", b =>
@@ -103,7 +103,7 @@ namespace CaloriesCouter.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CaloriesCouter.Models.DailyMeals", b =>
