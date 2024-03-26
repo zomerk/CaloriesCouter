@@ -1,23 +1,22 @@
-# Use an official ASP.NET Core runtime as a base image
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8080
 
 # Use the SDK image to build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["CaloriesCouter/CaloriesCouter.csproj", "CaloriesCounter/"]
-RUN dotnet restore "CaloriesCounter/CaloriesCounter.csproj"
+COPY ["CaloriesCouter/CaloriesCouter.csproj", "CaloriesCouter/"]
+RUN dotnet restore "CaloriesCouter/CaloriesCouter.csproj"
 COPY . .
-WORKDIR "/src/CaloriesCounter"
-RUN dotnet build "CaloriesCounter.csproj" -c Release -o /app/build
+WORKDIR "/src/CaloriesCouter"
+RUN dotnet build "CaloriesCouter.csproj" -c Release -o /app/build
 
 # Publish the application
 FROM build AS publish
-RUN dotnet publish "CaloriesCounter.csproj" -c Release -o /app/publish
+RUN dotnet publish "CaloriesCouter.csproj" -c Release -o /app/publish
 
 # Create the final runtime image
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "CaloriesCounter.dll"]
+ENTRYPOINT ["dotnet", "CaloriesCouter.dll"]

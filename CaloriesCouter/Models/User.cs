@@ -8,7 +8,7 @@
         public int Height { get; set; }
         public int KcalIntake { get; set; }
 
-        public virtual ICollection<DailyMeals> Meals { get; set; }
+        public virtual ICollection<DailyMeals>? Meals { get; set; }
 
     }
 }

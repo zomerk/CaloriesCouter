@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CaloriesCouter.Migrations
 {
     [DbContext(typeof(CaloriesCouterContext))]
-    [Migration("20240324203429_Init")]
+    [Migration("20240325215421_Init")]
     partial class Init
     {
         /// <inheritdoc />

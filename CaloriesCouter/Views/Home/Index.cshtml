@@ -1,8 +1,47 @@
-﻿@{
+﻿@model IEnumerable<CaloriesCouter.Models.User>
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+<script>
+    function redirectToCreate() {
+        window.location.href = '/users/create';
+    }
+</script>
+
+<style>
+    .container {
+        height: 200px;
+        position: relative;
+    }
+
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container">
+        @if (Model != null && Model.Any())
+        {
+            <button class="center" onclick="redirectToCreate()">
+                Create New User
+            </button>
+        }
+
+        else
+        {
+            <script>
+                window.location.href = "/dailymeals";
+            </script>
+        }
+    </div>
 </div>

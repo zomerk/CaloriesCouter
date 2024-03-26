@@ -8,8 +8,8 @@
         public string Type { get; set; }
 
         public DateTime Date { get; set; }
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 }
