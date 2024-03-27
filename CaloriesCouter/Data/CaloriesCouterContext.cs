@@ -1,19 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using CaloriesCouter.Models;
-
 namespace CaloriesCouter.Data
 {
     public class CaloriesCouterContext : DbContext
     {
-        public CaloriesCouterContext (DbContextOptions<CaloriesCouterContext> options)
-            : base(options)
+        protected readonly IConfiguration Configuration;
+
+        public CaloriesCouterContext(IConfiguration configuration)
         {
+            Configuration = configuration;
         }
 
-        public DbSet<CaloriesCouter.Models.Product> Product { get; set; } = default!;
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseNpgsql(Configuration.GetConnectionString("CaloriesCouterContext"));
+        }
+
+
+        public DbSet<Product> Product { get; set; } = default!;
+        public DbSet<DailyMeals> Meals { get; set; } = default!;
+
+        public DbSet<User> Users { get; set; } = default!;
+
+
     }
 }
