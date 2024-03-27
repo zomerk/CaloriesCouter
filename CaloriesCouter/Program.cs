@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using CaloriesCouter.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CaloriesCouterContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("CaloriesCouterContext") ?? throw new InvalidOperationException("Connection string 'CaloriesCouterContext' not found.")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("CaloriesCouterContext") ?? throw new InvalidOperationException("Connection string 'CaloriesCouterContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
