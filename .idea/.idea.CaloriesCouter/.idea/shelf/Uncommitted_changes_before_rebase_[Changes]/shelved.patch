@@ -1,0 +1,61 @@
+Index: CaloriesCouter/Properties/serviceDependencies.local.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"dependencies\": {\n    \"mssql1\": {\n      \"type\": \"mssql.local\",\n      \"connectionId\": \"ConnectionStrings:CaloriesCouterContext\"\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CaloriesCouter/Properties/serviceDependencies.local.json b/CaloriesCouter/Properties/serviceDependencies.local.json
+--- a/CaloriesCouter/Properties/serviceDependencies.local.json	(revision 09989170230c20d62ab78fdb0ec96156a821f983)
++++ b/CaloriesCouter/Properties/serviceDependencies.local.json	(date 1711357145647)
+@@ -2,7 +2,7 @@
+   "dependencies": {
+     "mssql1": {
+       "type": "mssql.local",
+-      "connectionId": "ConnectionStrings:CaloriesCouterContext"
++      "connectionId": "DataBaseForProject:CaloriesCouterContext"
+     }
+   }
+ }
+\ No newline at end of file
+Index: CaloriesCouter/appsettings.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"Logging\": {\n    \"LogLevel\": {\n      \"Default\": \"Information\",\n      \"Microsoft.AspNetCore\": \"Warning\"\n    }\n  },\n  \"AllowedHosts\": \"*\",\n  \"ConnectionStrings\": {\n    \"CaloriesCouterContext\": \"Server=(localdb)\\\\mssqllocaldb;Database=CaloriesCouterContext-90864a68-183d-4575-b420-9ada49f7a712;Trusted_Connection=True;MultipleActiveResultSets=true\"\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CaloriesCouter/appsettings.json b/CaloriesCouter/appsettings.json
+--- a/CaloriesCouter/appsettings.json	(revision 09989170230c20d62ab78fdb0ec96156a821f983)
++++ b/CaloriesCouter/appsettings.json	(date 1711301895326)
+@@ -7,6 +7,6 @@
+   },
+   "AllowedHosts": "*",
+   "ConnectionStrings": {
+-    "CaloriesCouterContext": "Server=(localdb)\\mssqllocaldb;Database=CaloriesCouterContext-90864a68-183d-4575-b420-9ada49f7a712;Trusted_Connection=True;MultipleActiveResultSets=true"
++    "CaloriesCouterContext": "Server=(localdb)\\postgresql;Database=CaloriesCouterContext-90864a68-183d-4575-b420-9ada49f7a712;Trusted_Connection=True;MultipleActiveResultSets=true"
+   }
+ }
+\ No newline at end of file
+Index: CaloriesCouter/Properties/serviceDependencies.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\n  \"dependencies\": {\n    \"mssql1\": {\n      \"type\": \"mssql\",\n      \"connectionId\": \"ConnectionStrings:CaloriesCouterContext\"\n    }\n  }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CaloriesCouter/Properties/serviceDependencies.json b/CaloriesCouter/Properties/serviceDependencies.json
+--- a/CaloriesCouter/Properties/serviceDependencies.json	(revision 09989170230c20d62ab78fdb0ec96156a821f983)
++++ b/CaloriesCouter/Properties/serviceDependencies.json	(date 1711357145649)
+@@ -1,8 +1,8 @@
+ {
+   "dependencies": {
+     "mssql1": {
+-      "type": "mssql",
+-      "connectionId": "ConnectionStrings:CaloriesCouterContext"
++      "type": "mssql.local",
++      "connectionId": "DataBaseForProject:CaloriesCouterContext"
+     }
+   }
+ }
+\ No newline at end of file
